@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import ProductDetailsScreen from './src/screens/ProductDetailsScreen';
+import Navigation from './src/navigation';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
+      <Provider store={store}>
+      <Navigation/>
       <StatusBar style="auto" />
-    </View>
+      </Provider>
   );
 }
 
@@ -16,5 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });
+
